@@ -1,6 +1,8 @@
 spring:
   application:
     name: lotolab
+  mongodb:
+    uri: ${MONGODB_URI:mongodb://lotolab:lotolab@localhost:27017/lotolab?authSource=admin}
 
 springdoc:
   swagger-ui:

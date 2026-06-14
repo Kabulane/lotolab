@@ -1,0 +1,32 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: lotolab-mongodb
+    environment:
+      MONGO_INITDB_DATABASE: lotolab
+      MONGO_INITDB_ROOT_USERNAME: lotolab
+      MONGO_INITDB_ROOT_PASSWORD: lotolab
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --username
+        - lotolab
+        - --password
+        - lotolab
+        - --authenticationDatabase
+        - admin
+        - --eval
+        - "db.adminCommand('ping')"
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  mongodb_data:

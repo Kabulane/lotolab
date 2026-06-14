@@ -121,3 +121,14 @@ LNI
 Loto Naturalness Index.
 
 Measures how closely a grid matches statistical patterns observed in theory and history.
+
+## Historical Scope
+
+LotoLab focuses exclusively on the current Lotto format introduced on October 6th, 2008:
+
+- 5 numbers drawn from 1 to 49
+- 1 Chance number drawn from 1 to 10
+
+Historical draws prior to October 6th, 2008 are out of scope.
+
+The goal is to keep a homogeneous dataset and ensure that theoretical and historical distributions are directly comparable.
